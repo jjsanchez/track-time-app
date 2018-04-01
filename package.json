@@ -1,0 +1,19 @@
+{
+  "name": "tt-app",
+  "version": "1.0.0",
+  "description": "A simple app to track time",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "",
+  "author": "jjsg@",
+  "devDependencies": {
+    "electron": "^1.8.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper": "^1.0.1"
+  }
+}
