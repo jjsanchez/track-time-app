@@ -1,19 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Time Tracking</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
-    <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
-    </script>
+    <div class="py-5 text-center container">
+      <h1>Track your time!</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <button type="button" class="form-control">Stop</button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="form-control">Export</button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="form-control">Clear</button>
+          </div>
+      </div>
+    </div>
+    <div class="py-5 container">
+      <div class="row">
+        <div class="col-md-2">
+          <select class="form-control">
+            <option value="project">Project</option>
+            <option value="meeting">Meeting</option>
+            <option value="mail">Mail</option>
+            <option value="standup">Standup</option>
+          </select>
+        </div>
+        <div class="col-md-10">
+          <input type="text" id="inputTask" class="form-control" placeholder="Task name" required autofocus>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <h5>Write code for the new Activity on AbReportingService</h5>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="form-control">Start</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <h5>Write code for the new Activity on AbReportingService</h5>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="form-control">Start</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <h5>Write code for the new Activity on AbReportingService</h5>
+        </div>
+        <div class="col-md-2">
+          <button type="button" class="form-control">Start</button>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="renderer.js"></script>
 </html>
