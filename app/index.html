@@ -7,61 +7,39 @@
     <title>Time Tracking</title>
   </head>
   <body>
+    <div id="alert-placeholder"></div>
     <div class="py-5 text-center container">
       <h1>Track your time!</h1>
         <div class="row">
           <div class="col-md-4">
-            <button type="button" class="form-control">Stop</button>
+            <button id="stop-btn" type="button" class="form-control">Stop</button>
           </div>
           <div class="col-md-4">
-            <button type="button" class="form-control">Export</button>
+            <button id="export-btn" type="button" class="form-control">Export</button>
           </div>
           <div class="col-md-4">
-            <button type="button" class="form-control">Clear</button>
+            <button id="clear-btn" type="button" class="form-control">Clear</button>
           </div>
       </div>
     </div>
     <div class="py-5 container">
       <div class="row">
         <div class="col-md-2">
-          <select class="form-control">
-            <option value="project">Project</option>
-            <option value="meeting">Meeting</option>
-            <option value="mail">Mail</option>
-            <option value="standup">Standup</option>
+          <select id="taskType" class="form-control">
+            <option value="Project">Project</option>
+            <option value="Meeting">Meeting</option>
+            <option value="Mail">Mail</option>
+            <option value="Standup">Standup</option>
           </select>
         </div>
         <div class="col-md-10">
-          <input type="text" id="inputTask" class="form-control" placeholder="Task name" required autofocus>
+          <input type="text" id="taskName" class="form-control" placeholder="Task name" required autofocus>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10">
-          <h5>Write code for the new Activity on AbReportingService</h5>
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="form-control">Start</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-          <h5>Write code for the new Activity on AbReportingService</h5>
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="form-control">Start</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-          <h5>Write code for the new Activity on AbReportingService</h5>
-        </div>
-        <div class="col-md-2">
-          <button type="button" class="form-control">Start</button>
-        </div>
-      </div>
+    <div id="tasks-container" class="container">
     </div>
   </body>
+  <script src="js/storage.js"></script>
   <script src="js/renderer.js"></script>
 </html>
