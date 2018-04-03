@@ -68,7 +68,7 @@ window.Bootstrap = require('bootstrap');
           <h5>${task.type} - ${task.name} - ${task.duration}</h5>
         </div>
         <div class="col-md-2">
-          <button type="button" data-task-id="${task.id}" class="start-button form-control">Start</button>
+          <button type="button" data-task-id="${task.id}" class="start-button btn btn-primary">Start</button>
         </div>
       </div>
       `);

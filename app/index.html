@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootswatch/dist/solar/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Time Tracking</title>
   </head>
   <body>
@@ -12,20 +13,20 @@
       <h1>Track your time!</h1>
         <div class="row">
           <div class="col-md-4">
-            <button id="stop-btn" type="button" class="form-control">Stop</button>
+            <button id="stop-btn" type="button" class="form-control btn btn-primary">Stop</button>
           </div>
           <div class="col-md-4">
-            <button id="export-btn" type="button" class="form-control">Export</button>
+            <button id="export-btn" type="button" class="form-control btn btn-primary">Export</button>
           </div>
           <div class="col-md-4">
-            <button id="clear-btn" type="button" class="form-control">Clear</button>
+            <button id="clear-btn" type="button" class="form-control btn btn-primary">Clear</button>
           </div>
       </div>
     </div>
     <div class="py-5 container">
       <div class="row">
         <div class="col-md-2">
-          <select id="taskType" class="form-control">
+          <select id="taskType" class="form-control ">
             <option value="Project">Project</option>
             <option value="Meeting">Meeting</option>
             <option value="Mail">Mail</option>
