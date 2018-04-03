@@ -4,10 +4,16 @@ window.$ = window.jQuery = require('jquery');
 window.Bootstrap = require('bootstrap');
 
 (function() {
+
   function hookUpEvents() {
     $('#export-btn').on('click', async () => {
+      stop();
+
+      let {clipboard} = require('electron');
+      clipboard.clear();
       await storage.list((t) => {
-        console.log(`${t.day}#${t.type}#${t.name}#${t.durationSecs}`);
+        let current = clipboard.readText();
+        clipboard.writeText(current + `\n${t.day}#${t.type}#${t.name}#${t.durationSecs}`);
       });
     });
 
@@ -16,7 +22,7 @@ window.Bootstrap = require('bootstrap');
         let id = generateUUID();
         let type = $('#taskType').val();
         let name = $('#taskName').val();
-        let task = { id: id, type: type, name:name };
+        let task = { id: id, type: type, name:name, duration: "0 seconds" };
 
         storage.add(task);
         showAlert("Task added!");
@@ -31,11 +37,7 @@ window.Bootstrap = require('bootstrap');
       showAlert("All tasks removed!");
     });
 
-    $('#stop-btn').on('click', (event) => {
-      storage.stop();
-      showAlert("Timing stopped!");
-      $(`.bg-success`).removeClass('bg-success');
-    });
+    $('#stop-btn').on('click', stop);
 
     $('#tasks-container').on('click', '.start-button', async (e) => {
       let taskId = $(e.target).attr('data-task-id');
@@ -44,6 +46,12 @@ window.Bootstrap = require('bootstrap');
       $(`#row-${taskId}`).addClass('bg-success');
       showAlert("Starting task!");
     });
+  }
+
+  function stop() {
+    storage.stop();
+    showAlert("Timing stopped!");
+    $(`.bg-success`).removeClass('bg-success');
   }
 
   async function showTasks() {
